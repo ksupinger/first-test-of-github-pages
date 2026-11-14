@@ -1,8 +1,77 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="BlueOceanIOT specializes in custom electronic controller designs. Let's turn your control challenge into purpose-built electronics.">
-<meta name="theme-color" content="#071a28"><title>BlueOceanIOT | Custom Electronic Controllers</title><link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
-<body><header><a class="brand" href="#home" aria-label="BlueOceanIOT home"><img src="assets/logo.png" alt="BlueOceanIOT"></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span>☰</span></button><nav id="navigation" aria-label="Main navigation"><a href="#home">Home</a><a href="#expertise">Expertise</a><a href="#projects">Example projects</a><a href="#about">About us</a><a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a></nav></header>
-<main><section class="hero" id="home"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> CUSTOM ELECTRONICS. PURPOSEFUL DESIGN.</p><h1>Your idea.<br>Our engineering.<br><em>Connected.</em></h1><p class="intro">Custom electronic controllers built around your application. BlueOceanIOT helps bring the intelligence inside your next product to life.</p><div class="actions"><a class="button" href="#contact">Discuss your project <span>↗</span></a><a class="text-link" href="#projects">Explore the possibilities <span>↓</span></a></div><div class="hero-notes"><span>Custom controller design</span><span>Application-first thinking</span></div></div><div class="hardware" role="img" aria-label="Illustration of a custom electronic controller circuit board"><div class="orb"></div><div class="board"><div class="board-label">BLUEOCEANIOT <span>CTRL / 01</span></div><div class="traces"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="chip"><small>BLUEOCEAN</small><strong>CONTROL</strong><span>DESIGNED FOR YOUR APPLICATION</span></div><div class="port p1"></div><div class="port p2"></div><div class="port p3"></div><div class="port p4"></div><div class="components"><b></b><b></b><b></b><b></b></div><div class="board-footer"><span>● &nbsp; SYSTEM READY</span><span>01 — CUSTOM</span></div></div><div class="diagram-label"><span class="cross">+</span> PURPOSE-BUILT INTELLIGENCE<br><small>From a control challenge to a custom solution.</small></div></div><a class="scroll-note" href="#approach">ENGINEERED AROUND YOU <span>↓</span></a></section>
-<section class="approach section" id="approach"><div><p class="eyebrow">THE RIGHT FIT STARTS HERE</p><h2>Great products start<br>with the right controller.</h2></div><div class="approach-copy"><p>Every application has its own constraints. Your electronics should reflect them. We specialize in custom electronic controller designs, starting with what your system needs to do.</p><div class="disciplines"><span>01 / Understand the application</span><span>02 / Define the controller</span><span>03 / Shape the solution</span></div></div></section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore self-forming Wi-Fi mesh networks for yachts, with ESP32 nodes for onboard monitoring and control.">
+  <meta name="theme-color" content="#f4fbfc">
+  <title>Yacht Mesh Networks | BlueOceanIOT</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" aria-label="BlueOceanIOT home"><img class="logo" src="assets/logo.png" alt="BlueOceanIOT"></a>
+      <nav aria-label="Main navigation">
+        <a href="#architecture">How it works</a>
+        <a href="#applications">Onboard uses</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">Onboard monitoring &amp; control</p>
+          <h1>Yacht Mesh <em>Networks</em></h1>
+          <p class="lede">Connect sensors and controls from bow to stern with a self-forming Wi-Fi mesh built around ESP32 controllers.</p>
+          <a class="button" href="#architecture">Explore the mesh <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section" id="architecture">
+      <div class="architecture-intro">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>Intelligence in every compartment</h2>
+          <p class="section-intro">Each ESP32 is a controller installed near the equipment it serves. After provisioning with the vessel’s mesh settings, compatible nodes discover one another and establish Wi-Fi links automatically. They can relay data over multiple hops and reconnect through available paths when radio conditions change.</p>
+        </div>
+        <figure class="mesh-visual">
+          <img src="https://img.magnific.com/free-vector/abstract-mesh-background_1217-747.jpg?q=80&amp;w=740"
+               alt="Glowing nodes connected by multiple links across an abstract mesh" loading="lazy" decoding="async">
+          <figcaption><a href="https://www.magnific.com/free-photos-vectors/mesh-network">Stock illustration from Magnific</a></figcaption>
+        </figure>
+      </div>
+      <div class="cards">
+        <article><h3>Sense</h3><p>Each node can sample analog and digital inputs such as tank levels, temperature, battery voltage, and switch states. Firmware can filter noisy signals, detect changes, and publish readings or alerts to the helm.</p><figure class="nmea-visual"><a href="https://garmin.bg/image/catalog/Products/400-Marine/NMEA%202000/nmea%202000.png"><img src="https://garmin.bg/image/catalog/Products/400-Marine/NMEA%202000/nmea%202000.png" alt="Garmin NMEA 2000 cables, T-connectors and terminators" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 network components</figcaption></figure></article>
+        <article><h3>Relay</h3><p>Nodes relay telemetry and commands between compartments. A helm display can show when data was last received and flag stale readings. Local rules can continue running when a node loses its link to the dashboard.</p><figure class="nmea-visual"><a href="https://atlaske-content.garmin.com/asset/images/NMEA2000network_Time1459547933464.png"><img src="https://atlaske-content.garmin.com/asset/images/NMEA2000network_Time1459547933464.png" alt="Garmin diagram of a wired NMEA 2000 backbone with connected devices" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 backbone diagram</figcaption></figure></article>
+        <article><h3>Act</h3><p>A cabin node can read humidity and switch a fan through a suitably rated driver, then report the commanded state. The helm can send a manual override over the local mesh. Firmware can define how outputs behave at startup, after a restart, or when an override expires.</p><figure class="nmea-visual"><a href="https://atlaske-content.garmin.com/asset/images/N2KantennaInstall_Time1486147434400.jpg"><img src="https://atlaske-content.garmin.com/asset/images/N2KantennaInstall_Time1486147434400.jpg" alt="Garmin NMEA 2000 installation diagram showing equipment connected to a wired backbone" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 installation example</figcaption></figure></article>
+      </div>
+      <p class="nmea-context">These Garmin examples show wired NMEA 2000 equipment. An ESP32 Wi-Fi mesh needs a compatible gateway to exchange data with an NMEA 2000 backbone.</p>
+    </section>
+    <section class="applications" id="applications">
+      <div class="wrap section applications-inner">
+        <div>
+          <p class="eyebrow">Onboard uses</p>
+          <h2>From the bilge to the helm</h2>
+          <p class="section-intro">Place nodes close to the equipment they serve. Test radio links with hatches and doors closed, since metal bulkheads can weaken Wi-Fi signals.</p>
+        </div>
+        <dl>
+          <div><dt>Bilge</dt><dd>Report high-water switch state and pump run time.</dd></div>
+          <div><dt>Engine room</dt><dd>Track compartment temperature and battery voltage.</dd></div>
+          <div><dt>Cabin</dt><dd>Monitor humidity and control lights or fans.</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 BlueOceanIOT. All rights reserved.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
+</html>
