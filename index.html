@@ -1,76 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore self-forming Wi-Fi mesh networks for yachts, with ESP32 nodes for onboard monitoring and control.">
   <meta name="theme-color" content="#f4fbfc">
-  <meta name="description" content="YachtMeshNet explores local communication between participating yachts at anchor, in marinas, and underway.">
-  <title>YachtMeshNet | Local yacht-to-yacht communication</title>
-  <link rel="canonical" href="https://yachtmeshnet.com/">
+  <title>Yacht Mesh Networks | BlueOceanIOT</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <script src="theme.js" defer></script>
 </head>
 <body id="top">
-  <header class="wrap header">
-    <a class="brand" href="#top">YachtMeshNet<span>.com</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#mesh">The mesh</a>
-      <a href="#uses">On the water</a>
-      <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
-    </nav>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" aria-label="BlueOceanIOT home"><img class="logo" src="assets/logo.png" alt="BlueOceanIOT"></a>
+      <nav aria-label="Main navigation">
+        <a href="#architecture">How it works</a>
+        <a href="#applications">Onboard uses</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+      </nav>
+    </div>
   </header>
   <main>
     <section class="hero">
       <div class="wrap hero-inner">
-        <h1>Stay in touch with neighboring yachts.</h1>
-        <p>YachtMeshNet is a concept for local messaging between participating crews. Connect directly when yachts are within radio range, or reach farther through a participating neighbor.</p>
-        <a class="button" href="#mesh">See how messages travel <span aria-hidden="true">↓</span></a>
-      </div>
-    </section>
-    <section class="wrap section" id="mesh">
-      <h2>One yacht can relay to the next.</h2>
-      <p class="intro">Each participating yacht has a compatible mesh radio. When the destination is beyond direct range, an in-range neighbor can relay the message. Every hop needs a working radio link.</p>
-      <div class="diagrams">
-        <figure>
-          <svg viewBox="0 0 480 180" role="img" aria-labelledby="direct-title">
-            <title id="direct-title">A direct radio link connects Yacht A and Yacht B</title>
-            <path class="link" d="M140 78H340"/>
-            <use href="assets/yacht.svg#yacht" x="85" y="38" width="100" height="80"/>
-            <use href="assets/yacht.svg#yacht" x="295" y="38" width="100" height="80"/>
-            <text x="135" y="139">Yacht A</text><text x="345" y="139">Yacht B</text>
-          </svg>
-          <figcaption><strong>Direct link</strong> Two participating yachts within radio range can message each other.</figcaption>
-        </figure>
-        <figure>
-          <div class="fleet-overlay">
-            <img src="assets/anchorage.jpg" alt="Four sailboats moored in a sheltered anchorage">
-            <svg viewBox="0 0 1672 941" role="img" aria-labelledby="fleet-title">
-              <title id="fleet-title">Radio links between four participating sailboats form two routes across the anchorage</title>
-              <path class="fleet-links" d="M863 372L1120 610L1505 421L1341 283Z M1120 610L1341 283"/>
-              <g class="fleet-nodes">
-                <circle cx="863" cy="372" r="10"/>
-                <circle cx="1120" cy="610" r="10"/>
-                <circle cx="1505" cy="421" r="10"/>
-                <circle cx="1341" cy="283" r="10"/>
-              </g>
-            </svg>
-          </div>
-          <figcaption><strong>Anchorage mesh</strong> Each line represents a direct radio link. Participating yachts can relay messages along another route when a link drops and a working path remains. <a href="https://www.magnific.com/free-photos-vectors/mesh-network">Stock mesh illustration from Magnific</a>.</figcaption>
-        </figure>
-      </div>
-    </section>
-    <section class="uses" id="uses">
-      <div class="wrap section">
-        <h2>What crews can share</h2>
-        <div class="cards">
-          <article><h3>At anchor</h3><p>Coordinate dinghy pickups and share plans with nearby crews.</p></article>
-          <article><h3>In a marina</h3><p>Check arrival times and arrange dockside meetups with participating neighbors.</p></article>
-          <article><h3>Underway together</h3><p>Share routine check-ins and changes to rendezvous plans while a mesh route is available.</p></article>
+        <div>
+          <p class="eyebrow">Onboard monitoring &amp; control</p>
+          <h1>Yacht Mesh <em>Networks</em></h1>
+          <p class="lede">Connect sensors and controls from bow to stern with a self-forming Wi-Fi mesh built around ESP32 controllers.</p>
+          <a class="button" href="#architecture">Explore the mesh <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="note">Local messaging can work without internet access while a radio route is available. Use established marine distress and safety communications for emergencies.</p>
+      </div>
+    </section>
+    <section class="wrap section" id="architecture">
+      <div class="architecture-intro">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>Intelligence in every compartment</h2>
+          <p class="section-intro">Each ESP32 is a controller installed near the equipment it serves. After provisioning with the vessel’s mesh settings, compatible nodes discover one another and establish Wi-Fi links automatically. They can relay data over multiple hops and reconnect through available paths when radio conditions change.</p>
+        </div>
+        <figure class="mesh-visual">
+          <img src="https://img.magnific.com/free-vector/abstract-mesh-background_1217-747.jpg?q=80&amp;w=740"
+               alt="Glowing nodes connected by multiple links across an abstract mesh" loading="lazy" decoding="async">
+          <figcaption><a href="https://www.magnific.com/free-photos-vectors/mesh-network">Stock illustration from Magnific</a></figcaption>
+        </figure>
+      </div>
+      <div class="cards">
+        <article><h3>Sense</h3><p>Each node can sample analog and digital inputs such as tank levels, temperature, battery voltage, and switch states. Firmware can filter noisy signals, detect changes, and publish readings or alerts to the helm.</p><figure class="nmea-visual"><a href="https://garmin.bg/image/catalog/Products/400-Marine/NMEA%202000/nmea%202000.png"><img src="https://garmin.bg/image/catalog/Products/400-Marine/NMEA%202000/nmea%202000.png" alt="Garmin NMEA 2000 cables, T-connectors and terminators" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 network components</figcaption></figure></article>
+        <article><h3>Relay</h3><p>Nodes relay telemetry and commands between compartments. A helm display can show when data was last received and flag stale readings. Local rules can continue running when a node loses its link to the dashboard.</p><figure class="nmea-visual"><a href="https://atlaske-content.garmin.com/asset/images/NMEA2000network_Time1459547933464.png"><img src="https://atlaske-content.garmin.com/asset/images/NMEA2000network_Time1459547933464.png" alt="Garmin diagram of a wired NMEA 2000 backbone with connected devices" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 backbone diagram</figcaption></figure></article>
+        <article><h3>Act</h3><p>A cabin node can read humidity and switch a fan through a suitably rated driver, then report the commanded state. The helm can send a manual override over the local mesh. Firmware can define how outputs behave at startup, after a restart, or when an override expires.</p><figure class="nmea-visual"><a href="https://atlaske-content.garmin.com/asset/images/N2KantennaInstall_Time1486147434400.jpg"><img src="https://atlaske-content.garmin.com/asset/images/N2KantennaInstall_Time1486147434400.jpg" alt="Garmin NMEA 2000 installation diagram showing equipment connected to a wired backbone" loading="lazy" decoding="async"></a><figcaption>Garmin NMEA 2000 installation example</figcaption></figure></article>
+      </div>
+      <p class="nmea-context">These Garmin examples show wired NMEA 2000 equipment. An ESP32 Wi-Fi mesh needs a compatible gateway to exchange data with an NMEA 2000 backbone.</p>
+    </section>
+    <section class="applications" id="applications">
+      <div class="wrap section applications-inner">
+        <div>
+          <p class="eyebrow">Onboard uses</p>
+          <h2>From the bilge to the helm</h2>
+          <p class="section-intro">Place nodes close to the equipment they serve. Test radio links with hatches and doors closed, since metal bulkheads can weaken Wi-Fi signals.</p>
+        </div>
+        <dl>
+          <div><dt>Bilge</dt><dd>Report high-water switch state and pump run time.</dd></div>
+          <div><dt>Engine room</dt><dd>Track compartment temperature and battery voltage.</dd></div>
+          <div><dt>Cabin</dt><dd>Monitor humidity and control lights or fans.</dd></div>
+        </dl>
       </div>
     </section>
   </main>
-  <footer class="wrap footer"><span>&copy; 2026 BlueOceanIOT. All rights reserved.</span><a href="#top">Back to top ↑</a></footer>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 BlueOceanIOT. All rights reserved.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
 </body>
 </html>

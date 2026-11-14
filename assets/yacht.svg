@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
-  <symbol id="yacht" viewBox="0 0 100 80">
-    <circle cx="50" cy="40" r="39" fill="#d4efeb"/>
-    <path d="M49 13v42H25z" fill="#087a74"/>
-    <path d="M54 24v31h18z" fill="#45a59a"/>
-    <path d="M21 59h58l-10 12H33z" fill="#123844"/>
-  </symbol>
-</svg>
