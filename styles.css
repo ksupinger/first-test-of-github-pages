@@ -1,183 +1,87 @@
 :root {
-  --navy: #071d2b;
-  --ink: #102d3c;
-  --teal: #74f0db;
-  --deep-teal: #146b62;
-  --line: #d5e3e5;
+  color-scheme: light;
+  --paper: #f6fbfa;
+  --ink: #102f39;
+  --muted: #405d65;
+  --panel: #e5f3f0;
+  --line: #b6d6d2;
+  --accent: #087a74;
+  font-family: "Instrument Sans", system-ui, sans-serif;
 }
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: #fff;
-  color: var(--ink);
-  font-family: "DM Sans", system-ui, sans-serif;
-  line-height: 1.65;
-}
-a { color: inherit; }
-a:focus-visible { outline: 3px solid #168f82; outline-offset: 5px; }
-.wrap { width: min(1120px, 90%); margin-inline: auto; }
-.header-inner, .footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  padding-block: 18px;
-}
-.logo { display: block; width: clamp(140px, 23vw, 225px); height: auto; }
-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-nav a, footer a { font-weight: 650; text-decoration: none; }
-nav a:hover, footer a:hover { text-decoration: underline; }
-
-.hero {
-  background: radial-gradient(ellipse at 78% 28%, #124254, var(--navy) 65%);
-  color: #f5ffff;
-}
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: clamp(30px, 6vw, 90px);
-  padding-block: clamp(55px, 9vw, 125px);
-}
-.eyebrow {
-  color: var(--deep-teal);
-  font-size: .76rem;
-  font-weight: 750;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  margin: 0 0 14px;
-}
-.hero .eyebrow, h1 em { color: var(--teal); }
-h1, h2, h3 { line-height: 1.08; margin: 0; }
-h1 { font-size: clamp(3rem, 7.2vw, 6.5rem); letter-spacing: -.065em; }
-h1 em { display: block; font-style: normal; }
-h2 { font-size: clamp(2.15rem, 4vw, 3.6rem); letter-spacing: -.05em; }
-.lede { max-width: 36ch; color: #c5dde4; font-size: 1.13rem; margin: 22px 0 30px; }
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 24px;
-  padding: 11px 18px;
-  border-radius: 5px;
-  background: var(--teal);
-  color: var(--navy);
-  font-weight: 750;
-  text-decoration: none;
-}
-.button:hover { background: #aaffef; }
-
-.section { padding-block: clamp(55px, 8vw, 100px); }
-.section-intro { max-width: 62ch; color: #405f6c; margin: 18px 0 0; }
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
-.cards article { border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
-.cards h3 { font-size: 1.3rem; }
-.cards p { margin: 12px 0 0; color: #405f6c; }
-.applications { background: #edf5f5; }
-.applications-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 70px; }
-dl { margin: 0; }
-dl div { padding: 14px 0; border-bottom: 1px solid #c6dada; }
-dt { font-weight: 750; }
-dd { margin: 3px 0 0; color: #405f6c; }
-.site-footer { background: var(--navy); color: #d4e7ec; font-size: .9rem; }
-.site-footer p { margin: 0; }
-
-@media (max-width: 720px) {
-  .hero-inner, .cards, .applications-inner { grid-template-columns: 1fr; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-
-nav { align-items: center; }
-.theme-toggle {
-  font: inherit;
-  font-size: .88rem;
-  font-weight: 650;
-  color: inherit;
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-.theme-toggle[aria-pressed="true"] { border-color: var(--teal); }
-.theme-toggle:focus-visible { outline: 3px solid #168f82; outline-offset: 3px; }
-
-.hero {
-  background: #d9eef2 url("https://media.boatbookings.com/media/M/A/MAMAMIA-top-aerial-shot-cruising.jpeg?canvas=1600%2C900&fit=crop") center / cover no-repeat;
-  color: var(--ink);
-}
-.hero-inner {
-  grid-template-columns: minmax(0, 570px);
-  min-height: clamp(460px, 58vw, 700px);
-}
-.hero-inner > div {
-  padding: clamp(22px, 4vw, 46px);
-  border-radius: 12px;
-  background: #f6fcfff5;
-}
-.hero .eyebrow, h1 em { color: var(--deep-teal); }
-.lede { color: #294f60; }
-.site-footer { background: #e4eff1; color: var(--ink); }
-
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   color-scheme: dark;
-  --ink: #e6f3f6;
-  --deep-teal: #74f0db;
-  --line: #375863;
+  --paper: #071d2b;
+  --ink: #eef8f8;
+  --muted: #b8d2d7;
+  --panel: #102f3d;
+  --line: #345561;
+  --accent: #83d9ca;
 }
-[data-theme="dark"] body { background: #071d2b; }
-[data-theme="dark"] .hero-inner > div { background: #071d2bf5; }
-[data-theme="dark"] .lede,
-[data-theme="dark"] .section-intro,
-[data-theme="dark"] .cards p,
-[data-theme="dark"] dd { color: #bdd4dd; }
-[data-theme="dark"] .applications { background: #102d3c; }
-[data-theme="dark"] dl div { border-color: var(--line); }
-[data-theme="dark"] .site-footer { background: #061720; }
-[data-theme="dark"] .logo { background: white; border-radius: 4px; }
-
-@media (min-width: 850px) {
-  .hero { background-position: right center; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.6; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+.header, .footer, nav { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.header, .footer { justify-content: space-between; padding-block: 1rem; }
+.brand { font-weight: 800; font-size: 1.35rem; letter-spacing: -.05em; text-decoration: none; }
+.brand span { color: var(--accent); }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.theme-toggle { font: inherit; color: inherit; border: 1px solid var(--line); background: transparent; padding: .35rem .75rem; border-radius: 2rem; cursor: pointer; }
+.theme-toggle[aria-pressed="true"] { background: var(--panel); }
+.hero {
+  background: linear-gradient(90deg, #071d2bf5 0%, #071d2bd9 38%, #071d2b38 100%) center / cover, url("assets/anchorage.jpg") 67% center / cover #123844;
+  color: #fff;
+}
+.hero-inner { padding-block: clamp(5rem, 12vw, 10rem); }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2 { line-height: 1.04; letter-spacing: -.055em; }
+h1 { max-width: 11ch; font-size: clamp(3.2rem, 7.5vw, 6.5rem); }
+.hero p { max-width: 45ch; margin-block: 1.5rem; font-size: 1.15rem; }
+.button { display: inline-block; background: #a9e8dc; color: #102f39; padding: .75rem 1.15rem; border-radius: .35rem; text-decoration: none; font-weight: 750; }
+.button:hover { background: #d4efeb; }
+.section { padding-block: clamp(3rem, 7vw, 6rem); }
+h2 { font-size: clamp(2.35rem, 5vw, 4rem); }
+.intro { max-width: 65ch; margin-top: 1rem; color: var(--muted); }
+.diagrams, .cards { display: grid; gap: 1rem; margin-top: 2rem; }
+.diagrams { grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); }
+.cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+figure, article { border: 1px solid var(--line); border-radius: .6rem; overflow: hidden; }
+figure svg { display: block; width: 100%; background: var(--panel); }
+figure text { fill: var(--ink); text-anchor: middle; font-weight: 700; font-size: 20px; }
+.link { stroke: var(--accent); stroke-width: 4; stroke-dasharray: 8 7; }
+figcaption, article { padding: 1.25rem; }
+figcaption strong { display: block; color: var(--ink); }
+figcaption, article p, .note { color: var(--muted); }
+.uses { background: var(--panel); }
+article { background: var(--paper); }
+article p { margin-top: .4rem; }
+.note { margin-top: 1.5rem; max-width: 70ch; }
+.footer { font-size: .95rem; }
+@media (max-width: 550px) {
+  .wrap { width: calc(100% - 2rem); }
+  nav { gap: .75rem; }
 }
 
-
-.architecture-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 24px clamp(28px, 5vw, 64px);
+.fleet-overlay { position: relative; }
+.fleet-overlay img { display: block; width: 100%; height: auto; }
+.fleet-overlay svg { position: absolute; inset: 0; background: transparent; }
+.fleet-links {
+  fill: none;
+  stroke: #a9f5e7;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 1px 3px #071d2b);
 }
-.mesh-visual { margin: 0; }
-.mesh-visual img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-}
-.mesh-visual figcaption { margin-top: 6px; font-size: .78rem; }
+.fleet-nodes { fill: #edfffc; stroke: #087a74; stroke-width: 4; }
 
-@media (max-width: 720px) {
-  .architecture-intro { grid-template-columns: 1fr; }
+.fleet-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/stock-mesh.jpg") center / cover;
+  mix-blend-mode: screen;
+  opacity: .38;
+  pointer-events: none;
 }
-
-
-.cards article { display: flex; flex-direction: column; }
-.nmea-visual { margin: auto 0 0; padding-top: 20px; }
-.nmea-visual img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-}
-.nmea-visual figcaption, .nmea-context { font-size: .85rem; }
-.nmea-visual figcaption { margin-top: 6px; }
-.nmea-context { margin: 16px 0 0; }
